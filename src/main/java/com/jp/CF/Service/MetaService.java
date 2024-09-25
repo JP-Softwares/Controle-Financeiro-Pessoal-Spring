@@ -21,11 +21,6 @@ public class MetaService {
     public Optional<Meta> findById(Long id) {
         return metaRepository.findById(id);
     }
-
-    public List<Meta> findByPessoa(Long pessoaId) {
-        return metaRepository.findByPessoaId(pessoaId);
-    }
-
     public List<Meta> findByGrupo(Long grupoId) {
         return metaRepository.findByGrupoId(grupoId);
     }

@@ -9,9 +9,6 @@ import java.util.List;
 @Repository
 public interface MetaRepository extends JpaRepository<Meta, Long> {
 
-    // Consulta para buscar metas por pessoa
-    List<Meta> findByPessoaId(Long pessoaId);
-
     // Consulta para buscar metas por grupo
     List<Meta> findByGrupoId(Long grupoId);
 }

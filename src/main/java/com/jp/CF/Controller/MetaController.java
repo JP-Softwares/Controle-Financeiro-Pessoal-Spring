@@ -47,7 +47,7 @@ public class MetaController {
     public ResponseEntity<List<Meta>> getMetasByPessoa(@PathVariable Long pessoaId) {
         Optional<Pessoa> pessoa = pessoaService.findById(pessoaId);
         if (pessoa.isPresent()) {
-            List<Meta> metas = metaService.findByPessoa(pessoaId);
+            List<Meta> metas = metaService.findByGrupo(pessoaId);
             return ResponseEntity.ok(metas);
         } else {
             return ResponseEntity.notFound().build();

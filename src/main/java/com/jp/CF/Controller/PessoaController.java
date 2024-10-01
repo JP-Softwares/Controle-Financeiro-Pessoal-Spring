@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(maxAge = 30000)
 @RequestMapping("/api/pessoas")
 public class PessoaController {
 

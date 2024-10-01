@@ -15,6 +15,14 @@ public class Pessoa {
 
     private String nome;
 
+    private String CPF;
+
+    private String email;
+
+
+    private String telefone;
+
+
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Grupo> grupos;
 }

@@ -14,6 +14,15 @@ public class PessoaService {
     @Autowired
     private PessoaRepository pessoaRepository;
 
+
+    private boolean verificarNomeUnico(String nome) {
+        Optional<Pessoa> pessoaComMesmoNome = pessoaRepository.findByNome(nome);
+        if (pessoaComMesmoNome.isPresent()) {
+            return false;
+        }
+        return true;
+    }
+
     public List<Pessoa> findAll() {
         return pessoaRepository.findAll();
     }

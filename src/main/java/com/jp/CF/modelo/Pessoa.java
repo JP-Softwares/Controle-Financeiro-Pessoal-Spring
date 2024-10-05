@@ -2,6 +2,7 @@ package com.jp.CF.modelo;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -9,6 +10,7 @@ import java.util.List;
 
 @Entity
 @Data
+@JsonIgnoreProperties("grupos")
 public class Pessoa {
 
     @Id
@@ -25,7 +27,6 @@ public class Pessoa {
     private String telefone;
 
 
-    @JsonBackReference
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Grupo> grupos;
 

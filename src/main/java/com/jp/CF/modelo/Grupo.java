@@ -18,7 +18,7 @@ public class Grupo {
     private String nome;
     private double saldo;
 
-    @JsonBackReference
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;

@@ -1,6 +1,7 @@
 package com.jp.CF.modelo;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -28,6 +29,7 @@ public class Lancamento {
 
     @ManyToOne
     @JoinColumn(name = "grupo_id")
+    @JsonBackReference
     private Grupo grupo;
 
     public Long getId() {

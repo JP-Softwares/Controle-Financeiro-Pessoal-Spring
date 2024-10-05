@@ -1,5 +1,6 @@
 package com.jp.CF.modelo;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.util.List;
@@ -16,6 +17,7 @@ public class Meta{
     private double saldo;
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "grupo_id")
     private Grupo grupo;
 }

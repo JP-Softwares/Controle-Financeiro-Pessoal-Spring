@@ -1,6 +1,7 @@
 package com.jp.CF.modelo;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.util.List;
@@ -20,9 +21,11 @@ public class Grupo {
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "grupo", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Lancamento> lancamentos;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "grupo", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Meta> metas;
 

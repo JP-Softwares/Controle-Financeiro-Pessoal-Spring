@@ -1,6 +1,7 @@
 package com.jp.CF.modelo;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.util.List;
@@ -22,7 +23,7 @@ public class Pessoa {
 
     private String telefone;
 
-
+    @JsonManagedReference
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Grupo> grupos;
 

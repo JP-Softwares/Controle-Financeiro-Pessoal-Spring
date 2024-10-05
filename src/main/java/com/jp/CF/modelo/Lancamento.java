@@ -14,6 +14,8 @@ public class Lancamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String nome;
+
     private double valor;
 
     @Enumerated(EnumType.STRING)
@@ -74,5 +76,13 @@ public class Lancamento {
 
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }

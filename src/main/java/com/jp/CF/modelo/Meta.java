@@ -17,7 +17,6 @@ public class Meta{
     private double saldo;
 
     @ManyToOne
-    @JsonBackReference
     @JoinColumn(name = "grupo_id")
     private Grupo grupo;
 

@@ -29,7 +29,6 @@ public class Lancamento {
 
     @ManyToOne
     @JoinColumn(name = "grupo_id")
-    @JsonBackReference
     private Grupo grupo;
 
     public Long getId() {
